@@ -1,59 +1,27 @@
-# NgxFolderFileMgt
+# 项目介绍
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+`ngx-folder-file-mgt` 是一个面向 Angular19 应用的文件夹与文件管理组件库，旨在提供类似 VS Code 的文件管理体验，同时针对网页交互逻辑进行优化。该组件支持文件 / 文件夹的树形结构展示、层级管理及各类操作，可无缝集成到各类需要文件管理功能的 Angular 应用中。
 
-## Development server
+项目的初衷是满足我个人项目的需求，目前没找到完全合用的组件，所以自己开发一个并且发布给有同样需求的人用。
 
-To start a local development server, run:
 
-```bash
-ng serve
-```
+# 功能计划
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+我的组件库ngx-folder-file-mgt打算支持以下功能，用户可以配置：
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+基础列表（只显示文件层级，可以选中文件），
 
-```bash
-ng generate component component-name
-```
+基础排序（可按文件名排序，置顶/取消置顶），
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+基础编辑（添加，删除，编辑文件名），
 
-```bash
-ng generate --help
-```
+基础快捷键（快捷键：切换，选中/展开/折叠，移动），
 
-## Building
+排序快捷键（快捷键：按文件名排序，置顶/取消置顶），
 
-To build the project run:
+编辑快捷键（快捷键：添加，删除，编辑），
 
-```bash
-ng build
-```
+拖拽排序，
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+拖拽删除
