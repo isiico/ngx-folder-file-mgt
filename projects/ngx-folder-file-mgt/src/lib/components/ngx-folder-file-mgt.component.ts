@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'folder-file-list',
+  selector: 'ngx-folder-file-mgt',
   imports: [],
   template: `
     <p>
-      folder-file-list works!
+      ngx-folder-file-mgt works!HELLO WORLD
     </p>
   `,
   styles: ``
 })
-export class FolderFileListComponent {
+export class NgxFolderFileMgtComponent {
 
 }

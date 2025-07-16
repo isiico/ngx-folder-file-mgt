@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FolderFileListService } from './folder-file-list.service';
+import { NgxFolderFileMgtService } from './ngx-folder-file-mgt.service';
 
 describe('NgxFolderFileMgtService', () => {
-  let service: FolderFileListService;
+  let service: NgxFolderFileMgtService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(FolderFileListService);
+    service = TestBed.inject(NgxFolderFileMgtService);
   });
 
   it('should be created', () => {

@@ -2,8 +2,8 @@
  * Public API Surface of ngx-folder-file-mgt
  */
 
-// 导出模块（使用者需要在自己的 app.module.ts 中导入此模块）
-export * from './lib/modules/folder-file-mgt.module';
+// 导出组件
+export * from './lib/components/ngx-folder-file-mgt.component';
 
 // 导出服务（使用者可以直接注入此服务）
 // export * from './services/file-tree.service';

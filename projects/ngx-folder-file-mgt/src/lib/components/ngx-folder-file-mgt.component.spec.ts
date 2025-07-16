@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FolderFileListComponent } from './folder-file-list.component';
+import { NgxFolderFileMgtComponent } from './ngx-folder-file-mgt.component';
 
 describe('NgxFolderFileMgtComponent', () => {
-  let component: FolderFileListComponent;
-  let fixture: ComponentFixture<FolderFileListComponent>;
+  let component: NgxFolderFileMgtComponent;
+  let fixture: ComponentFixture<NgxFolderFileMgtComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FolderFileListComponent]
+      imports: [NgxFolderFileMgtComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FolderFileListComponent);
+    fixture = TestBed.createComponent(NgxFolderFileMgtComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
