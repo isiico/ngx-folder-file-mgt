@@ -1,0 +1,29 @@
+<!-- 基于扁平数据渲染树形结构 -->
+@for (node of viewTree; track node.id) {
+  <!-- 只渲染可见节点 -->
+  @if (isNodeVisible(node)) {
+    <div class="node-item" [style.paddingLeft.px]="node.depth * 20">
+      @if (node.type === 'folder') {
+        <ng-container *ngTemplateOutlet="folderNodeTpl; context: { $implicit: node }"></ng-container>
+      } @else {
+        <ng-container *ngTemplateOutlet="fileNodeTpl; context: { $implicit: node }"></ng-container>
+      }
+    </div>
+  }
+}
+
+<!-- 文件夹模板 -->
+<ng-template #folderNodeTpl let-node>
+  <li (click)="clickFolder(node)" class="folder">
+    <i>{{ node.expanded ? '▾' : '▸' }}</i>
+    <span [class.selected]="node.selected">{{ node.name }}</span>
+  </li>
+</ng-template>
+
+<!-- 文件模板 -->
+<ng-template #fileNodeTpl let-node>
+  <li (click)="clickFile(node)" class="file" [class.selected]="node.selected">
+    <i>📄</i>
+    <span>{{ node.name }}</span>
+  </li>
+</ng-template>

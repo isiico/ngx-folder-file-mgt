@@ -1,0 +1,15 @@
+@if(ngxErrorInfo()?.type) {
+<div class="error-info">
+  @switch (ngxErrorInfo()?.type) { @case (errorType.EMPTY) {
+  <p>⚠️ 错误：当前数据为空</p>
+  } @case (errorType.DATANONE) {
+  <p>⚠️ 错误：未传入有效的值</p>
+  } @case (errorType.DATANOTONLY) {
+  <p>⚠️ 错误：同时传入了ngxData和ngxTreeData，数据不唯一</p>
+  } @case (errorType.IDREPEAT) {
+  <p>⚠️ 错误：传入的值中存在重复的节点ID</p>
+  } @case (errorType.UNKNOWN) {
+  <p>⚠️ 错误：未知错误</p>
+  } }
+</div>
+}

@@ -1,9 +1,8 @@
-<style>
-</style>
+<style></style>
 
 <main class="main">
-  <div>test</div>
- <ngx-folder-file-mgt></ngx-folder-file-mgt>
+  <div>{{ checkedIds }}</div>
+  <ngx-folder-file-mgt [(ngxData)]="ngxData" [(checkedIds)]="checkedIds"></ngx-folder-file-mgt>
+  <!-- <ngx-folder-file-mgt [(ngxTreeData)]="ngxTreeData" [(checkedIds)]="checkedIds"></ngx-folder-file-mgt> -->
+   <!-- <ngx-folder-file-mgt [(checkedIds)]="checkedIds"></ngx-folder-file-mgt> -->
 </main>
-
-
