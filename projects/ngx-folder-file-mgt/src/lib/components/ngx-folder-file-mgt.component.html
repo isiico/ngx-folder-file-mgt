@@ -1,0 +1,7 @@
+@if (ngxErrorInfo().type) {
+<!-- 错误组件（有错误时显示） -->
+<ngx-ffm-error-info [ngxErrorInfo]="ngxErrorInfo()" [ngxDebug]="ngxOption().debug"></ngx-ffm-error-info>
+}@else if(ngxFFmTreeData().length) {
+<!-- 渲染树形组件 -->
+<ngx-ffm-tree [(ngxData)]="ngxFFmTreeData" [(checkedIds)]="checkedIds" [ngxDebug]="ngxOption().debug"></ngx-ffm-tree>
+}

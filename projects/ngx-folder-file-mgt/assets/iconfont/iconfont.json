@@ -1,0 +1,93 @@
+{
+  "id": "4985779",
+  "name": "ngx-folder-file-mgt",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1509747",
+      "name": "展开",
+      "font_class": "open",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "19132498",
+      "name": "文件夹",
+      "font_class": "wenjianjia1",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "19690329",
+      "name": "文件",
+      "font_class": "wenjian2",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "26085112",
+      "name": "展开",
+      "font_class": "zhankai",
+      "unicode": "e6d2",
+      "unicode_decimal": 59090
+    },
+    {
+      "icon_id": "6201136",
+      "name": "暂无数据",
+      "font_class": "zanwushuju1",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "6544237",
+      "name": "错误",
+      "font_class": "cuowu",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "6999239",
+      "name": "错误",
+      "font_class": "cuowu1",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "8691826",
+      "name": "暂无数据",
+      "font_class": "zanwushuju2",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "12742578",
+      "name": "暂无数据22 (1)",
+      "font_class": "zanwushuju4",
+      "unicode": "e782",
+      "unicode_decimal": 59266
+    },
+    {
+      "icon_id": "17760305",
+      "name": "暂无数据",
+      "font_class": "zanwushuju9",
+      "unicode": "e813",
+      "unicode_decimal": 59411
+    },
+    {
+      "icon_id": "28537171",
+      "name": "tool-emergency",
+      "font_class": "yingjiguanli",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "31943926",
+      "name": "【关联UID】错误",
+      "font_class": "a-guanlianUIDcuowu",
+      "unicode": "e6ce",
+      "unicode_decimal": 59086
+    }
+  ]
+}

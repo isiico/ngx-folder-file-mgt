@@ -1,0 +1,25 @@
+@if(ngxErrorInfo()?.type) {
+<div class="error-info">
+  @switch (ngxErrorInfo()?.type) { @case (errorType.EMPTY) {
+  <h2><ngx-ffm-icon iconName="icon-zanwushuju2" [size]="50"></ngx-ffm-icon></h2>
+  <p>现在的文件夹/文件列表还是空的</p>
+  } @case (errorType.DATANONE) {
+  <h2><ngx-ffm-icon iconName="icon-yingjiguanli" [size]="30"></ngx-ffm-icon></h2>
+  <p>您未传入有效的文件夹/文件列表数据</p>
+  } @case (errorType.DATANOTONLY) {
+  <h2><ngx-ffm-icon iconName="icon-zanwushuju1" [size]="30"></ngx-ffm-icon></h2>
+  <p>同时传了【ngxData】【ngxTreeData】引发错误，只传一个</p>
+  } @case (errorType.IDREPEAT) {
+  <h2><ngx-ffm-icon iconName="icon-zanwushuju9" [size]="30"></ngx-ffm-icon></h2>
+  <p>您传入了以下重复的id：</p>
+  <p>
+    @for (node of this.ngxErrorInfo()?.ids; track node){
+    <span>【{{ node }}】</span>
+    }
+  </p>
+  } @case (errorType.UNKNOWN) {
+  <h2><ngx-ffm-icon iconName="icon-zanwushuju4" [size]="30"></ngx-ffm-icon></h2>
+  <p>糟糕，发生了未知的错误</p>
+  } }
+</div>
+}
