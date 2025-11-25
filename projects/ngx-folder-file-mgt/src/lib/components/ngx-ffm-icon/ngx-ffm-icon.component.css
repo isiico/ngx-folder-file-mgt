@@ -1,0 +1,15 @@
+.ngx-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  overflow: hidden;
+  /* 保持多色图标特性，不强制填充色 */
+  fill: currentColor;
+}
+.icon-placeholder {
+  /* 模拟图标的占位样式 */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+}

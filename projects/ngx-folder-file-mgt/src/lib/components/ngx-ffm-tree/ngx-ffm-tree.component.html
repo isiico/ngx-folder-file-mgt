@@ -1,29 +1,40 @@
 <!-- 基于扁平数据渲染树形结构 -->
 @for (node of viewTree; track node.id) {
-  <!-- 只渲染可见节点 -->
-  @if (isNodeVisible(node)) {
-    <div class="node-item" [style.paddingLeft.px]="node.depth * 20">
-      @if (node.type === 'folder') {
-        <ng-container *ngTemplateOutlet="folderNodeTpl; context: { $implicit: node }"></ng-container>
-      } @else {
-        <ng-container *ngTemplateOutlet="fileNodeTpl; context: { $implicit: node }"></ng-container>
-      }
-    </div>
-  }
-}
+<!-- 只渲染可见节点 -->
+<!-- @if (isNodeVisible(node)) { -->
+   @if (node.type === 'folder') {
+<ng-container *ngTemplateOutlet="folderNodeTpl; context: { $implicit: node }"></ng-container>
+} @else {
+<ng-container *ngTemplateOutlet="fileNodeTpl; context: { $implicit: node }"></ng-container>
+} } 
+<!-- } -->
 
 <!-- 文件夹模板 -->
 <ng-template #folderNodeTpl let-node>
-  <li (click)="clickFolder(node)" class="folder">
-    <i>{{ node.expanded ? '▾' : '▸' }}</i>
-    <span [class.selected]="node.selected">{{ node.name }}</span>
+  <li
+    [style.paddingLeft.px]="(node.depth - 1) * 40"
+    (click)="clickFolder(node)"
+    class="folder"
+    [class.visible]="isNodeVisible(node)"
+  >
+    <i class="expanded-box" [class.expanded]="node.expanded"
+      ><ngx-ffm-icon iconName="icon-zhankai" [size]="14"></ngx-ffm-icon
+    ></i>
+    <i class="icon-box"><ngx-ffm-icon iconName="icon-wenjianjia1" [size]="20"></ngx-ffm-icon></i>
+    <span>{{ node.name }}</span>
   </li>
 </ng-template>
 
 <!-- 文件模板 -->
 <ng-template #fileNodeTpl let-node>
-  <li (click)="clickFile(node)" class="file" [class.selected]="node.selected">
-    <i>📄</i>
+  <li
+    [style.paddingLeft.px]="(node.depth - 1) * 40 + 15"
+    (click)="clickFile(node)"
+    class="file"
+    [class.selected]="node.selected"
+    [class.visible]="isNodeVisible(node)"
+  >
+    <i class="icon-box"><ngx-ffm-icon iconName="icon-wenjian2" [size]="20"></ngx-ffm-icon></i>
     <span>{{ node.name }}</span>
   </li>
 </ng-template>

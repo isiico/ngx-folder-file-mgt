@@ -190,7 +190,7 @@ export class NgxFolderFileMgtService {
           id: node.id,
           name: node.name,
           type: node.type,
-          expanded: node.expanded || DEFAULT_VIEW_TREE_NODE.expanded,
+          expanded: node?.expanded,
           parentId: parentId,
           // 复制其他额外属性，但排除parentId
           ...Object.fromEntries(Object.entries(node).filter(([key]) => key !== 'children')),

@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { NgxFlatData, NgxDataFlatNode, CheckedIds } from '../ngx-folder-file-mgt.type';
 import { ViewTree, ViewTreeNode, DEFAULT_VIEW_TREE_NODE } from './ngx-ffm-tree.type';
 import { NgxFolderFileMgtService } from '../ngx-folder-file-mgt.service';
+import { NgxFfmIconComponent } from '../ngx-ffm-icon/ngx-ffm-icon.component';
 
 @Component({
   selector: 'ngx-ffm-tree',
-  imports: [CommonModule],
+  imports: [CommonModule, NgxFfmIconComponent],
   templateUrl: './ngx-ffm-tree.component.html',
-  styleUrl: './ngx-ffm-tree.component.css',
+  styleUrl: './ngx-ffm-tree.component.scss',
 })
 export class NgxFfmTreeComponent implements OnInit {
   // 接收扁平数据
@@ -21,8 +22,7 @@ export class NgxFfmTreeComponent implements OnInit {
   // 缓存节点映射表（优化查找性能）
   private nodeMap = new Map<string, ViewTreeNode>();
 
-  constructor(private ngxFolderFileMgtService: NgxFolderFileMgtService) {
-  }
+  constructor(private ngxFolderFileMgtService: NgxFolderFileMgtService) {}
 
   ngOnInit(): void {
     this.viewTree = this.convertToViewTree(this.ngxData());
@@ -37,6 +37,7 @@ export class NgxFfmTreeComponent implements OnInit {
 
   // 点击文件节点
   public clickFile(node: ViewTreeNode) {
+    this.viewTree.map((item) => (item.selected = node.id === item.id));
     if (this.checkedIds().length === 1 && this.checkedIds()[0] === node.id) {
       return;
     }
@@ -47,7 +48,6 @@ export class NgxFfmTreeComponent implements OnInit {
   public clickFolder(node: ViewTreeNode) {
     // 更新视图节点状态
     node.expanded = !node.expanded;
-    this.nodeMap.set(node.id, node);
 
     // 更新数据源（确保父组件能收到变化通知）
     const updatedData = this.ngxData().map((item) =>
@@ -88,13 +88,14 @@ export class NgxFfmTreeComponent implements OnInit {
       // 修正：有子节点的file类型转为folder
       const hasChildren = hasChildrenMap.get(node.id) || false;
       const type = hasChildren && node.type === 'file' ? 'folder' : node.type;
+      const parentNode = flatData.find((n) => n.id === node.parentId);
 
       return {
         ...DEFAULT_VIEW_TREE_NODE,
         ...node,
         type,
         depth: getDepth(node.id),
-        expanded: node.expanded ?? DEFAULT_VIEW_TREE_NODE.expanded, // 用默认值
+        expanded: node.expanded ?? parentNode?.expanded ?? DEFAULT_VIEW_TREE_NODE.expanded, // 用默认值
         selected: this.checkedIds().includes(node.id),
       };
     });

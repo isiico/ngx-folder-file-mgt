@@ -4,11 +4,44 @@
 
 项目的初衷是满足我个人项目的需求，目前没找到完全合用的组件，所以自己开发一个并且发布给有同样需求的人用。
 
+# 使用方法
+
+编辑 angular.json 添加图标
+
+```json
+...
+assets: [
+	...
+	{
+		"glob": "**/*",
+		"input": "node_modules/ngx-folder-file-mgt/assets",
+		"output": "/assets/"
+	}
+]
+...
+```
+
+把组件引进 module 或 component
+
+```typescript
+import { NgxFolderFileMgtComponent, NgxData } from 'ngx-folder-file-mgt';
+
+@NgModule({
+  ...
+    imports: [
+        ...
+        NgxFolderFileMgtComponent,
+    ],
+})
+
+export class AppModule {
+    public ngxData:NgxData = [];
+}
+```
 
 # 功能计划
 
-
-我的组件库ngx-folder-file-mgt打算支持以下功能，用户可以配置：
+我的组件库 ngx-folder-file-mgt 打算支持以下功能，用户可以配置：
 
 基础列表（只显示文件层级，可以选中文件），
 

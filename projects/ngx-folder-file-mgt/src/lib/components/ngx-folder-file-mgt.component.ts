@@ -1,4 +1,4 @@
-import { Component, effect, input, model, OnChanges, OnInit, signal, SimpleChanges } from '@angular/core';
+import { Component, effect, input, model, OnChanges, OnInit, signal, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   NgxData,
@@ -18,7 +18,8 @@ import { NgxFolderFileMgtService } from './ngx-folder-file-mgt.service';
   selector: 'ngx-folder-file-mgt',
   imports: [CommonModule, NgxFfmTreeComponent, NgxFfmErrorInfoComponent],
   templateUrl: './ngx-folder-file-mgt.component.html',
-  styles: ``,
+  styleUrl: './ngx-folder-file-mgt.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class NgxFolderFileMgtComponent implements OnInit {
   // ------------------------------

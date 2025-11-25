@@ -1,0 +1,16 @@
+<!-- ngx-ffm-icon.component.html -->
+<svg
+  *ngIf="isBrowser && isLoaded"
+  class="ngx-icon"
+  [class]="customClass()"
+  [style.fontSize.px]="size()"
+  [style.color]="color()"
+  aria-hidden="true"
+>
+  <use [attr.xlink:href]="'#' + iconName()"></use>
+</svg>
+
+<!-- 脚本加载失败时显示占位（保持组件标签结构） -->
+<ng-container *ngIf="isBrowser && !isLoaded">
+  <span class="icon-placeholder" [style.fontSize.px]="size()">&#xf000;</span>
+</ng-container>

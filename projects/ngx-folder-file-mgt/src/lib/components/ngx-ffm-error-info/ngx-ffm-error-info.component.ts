@@ -2,12 +2,13 @@ import { Component, effect, input, OnInit } from '@angular/core';
 import { NgxErrorInfo } from '../ngx-folder-file-mgt.type';
 import { NgxFolderFileMgtService } from '../ngx-folder-file-mgt.service';
 import { ErrorType } from '../ngx-folder-file-mgt.type';
+import { NgxFfmIconComponent } from '../ngx-ffm-icon/ngx-ffm-icon.component';
 
 @Component({
   selector: 'ngx-ffm-error-info',
-  imports: [],
+  imports: [NgxFfmIconComponent],
   templateUrl: './ngx-ffm-error-info.component.html',
-  styleUrl: './ngx-ffm-error-info.component.css',
+  styleUrl: './ngx-ffm-error-info.component.scss',
 })
 export class NgxFfmErrorInfoComponent implements OnInit {
   // 接收错误类型输入（主组件传递）

@@ -1,0 +1,47 @@
+li {
+  list-style: none;
+  display: flex;
+  color: #999;
+  font-size: 14px;
+  padding: 0 2px;
+  align-items: center;
+  height: 0px;
+  overflow: hidden;
+  transform: translateY(-20%);
+  transition: transform 0.1s ease-out,height 0.1s ease-out;
+
+  &:hover {
+    cursor: pointer;
+    color: #666;
+  }
+
+  &.visible {
+    height: 25px;
+    transform: translateY(0);
+    transition: transform 0.1s ease-in,height 0.1s ease-out;
+  }
+
+  .expanded-box {
+    width: 15px;
+
+    /* 针对文件夹展开/折叠图标设置旋转 */
+    ::ng-deep svg {
+      transition: transform 0.2s ease; /* 可选：添加过渡动画 */
+    }
+
+    /* 当文件夹展开时旋转图标（假设节点展开时添加 .expanded 类） */
+    &.expanded ::ng-deep svg {
+      transform: rotate(90deg); /* 旋转90度 */
+    }
+  }
+
+  .icon-box {
+    width: 25px;
+    text-align: left;
+  }
+
+  &.selected {
+    background: #91b9ff23;
+    color: #666;
+  }
+}

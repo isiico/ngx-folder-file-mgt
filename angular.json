@@ -62,6 +62,11 @@
               {
                 "glob": "**/*",
                 "input": "projects/ngx-folder-file-mgt-test/public"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/ngx-folder-file-mgt/assets",
+                "output": "/assets/"
               }
             ],
             "styles": [

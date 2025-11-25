@@ -1,8 +1,21 @@
 <style></style>
 
 <main class="main">
-  <div>{{ checkedIds }}</div>
-  <ngx-folder-file-mgt [(ngxData)]="ngxData" [(checkedIds)]="checkedIds"></ngx-folder-file-mgt>
-  <!-- <ngx-folder-file-mgt [(ngxTreeData)]="ngxTreeData" [(checkedIds)]="checkedIds"></ngx-folder-file-mgt> -->
-   <!-- <ngx-folder-file-mgt [(checkedIds)]="checkedIds"></ngx-folder-file-mgt> -->
+  <header><strong>ngx-folder-file-mgt</strong>组件例子</header>
+  <content>
+    <nav>
+      <h2>传入<strong>ngxData</strong><em>平铺</em></h2>
+      <h3>选中的节点：{{ checkedIds }}</h3>
+      <ngx-folder-file-mgt [(ngxData)]="ngxData" [(checkedIds)]="checkedIds"></ngx-folder-file-mgt>
+    </nav>
+    <nav>
+      <h2>传入<strong>ngxTreeData</strong><em>树形</em></h2>
+      <h3>选中的节点：{{ checkedIdsTree }}</h3>
+      <ngx-folder-file-mgt [(ngxTreeData)]="ngxTreeData" [(checkedIds)]="checkedIdsTree"></ngx-folder-file-mgt>
+    </nav>
+    <nav>
+      <h2>错误信息</h2>
+      <ngx-folder-file-mgt [(checkedIds)]="checkedIds" style="min-height: 500px;"></ngx-folder-file-mgt>
+    </nav>
+  </content>
 </main>
